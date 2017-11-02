@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class Message: NSObject, MKAnnotation {
     
@@ -17,7 +18,7 @@ class Message: NSObject, MKAnnotation {
     let coordinate: CLLocationCoordinate2D
     let isDisabled: Bool
     
-    init(title: String?, locationName: String, username: String, coordinate: CLLocationCoordinate2D, isDisabled: Bool) {
+    init(title: String, locationName: String, username: String, coordinate: CLLocationCoordinate2D, isDisabled: Bool) {
         self.title = title
         self.locationName = locationName
         self.username = username
@@ -26,6 +27,7 @@ class Message: NSObject, MKAnnotation {
         
         super.init()
     }
+    
     var subtitle: String? {
         return locationName
     }

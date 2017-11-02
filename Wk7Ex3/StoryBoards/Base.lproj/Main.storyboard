@@ -60,21 +60,67 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rsc-HI-Rh5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="RYH-Jn-zrh">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="E2M-3u-1sS">
+                                            <connections>
+                                                <segue destination="fkB-x0-Koj" kind="show" id="6db-NT-mBu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P54-En-lAY">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="rUo-9T-giB"/>
+                                    <barButtonItem systemItem="search" id="LL2-m0-HFq">
+                                        <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Te-V7-T6g">
+                                <rect key="frame" x="0.0" y="88" width="375" height="379"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Rsc-HI-Rh5" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="48j-uO-aJa"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
+                            <constraint firstItem="Rsc-HI-Rh5" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="E9c-Oe-wnP"/>
+                            <constraint firstItem="Rsc-HI-Rh5" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="GhO-tx-ORm"/>
+                            <constraint firstItem="Rsc-HI-Rh5" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="Iyf-MD-UDV"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
+                            <constraint firstItem="P54-En-lAY" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="KwZ-rd-6q1"/>
+                            <constraint firstItem="Rsc-HI-Rh5" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="MCD-jX-jJT"/>
+                            <constraint firstItem="Rsc-HI-Rh5" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="QZI-5B-YW0"/>
+                            <constraint firstItem="6Te-V7-T6g" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="Qcc-f5-F4z"/>
+                            <constraint firstItem="6Te-V7-T6g" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="UE6-V0-5ao"/>
+                            <constraint firstItem="P54-En-lAY" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="Ul7-0Z-2ML"/>
+                            <constraint firstItem="Rsc-HI-Rh5" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="bRJ-pR-aoQ"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="Rsc-HI-Rh5" firstAttribute="centerX" secondItem="P54-En-lAY" secondAttribute="centerX" id="xbZ-4c-y62"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Messages" image="second" badgeValue="0" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="785" y="352"/>
+            <point key="canvasLocation" x="784.79999999999995" y="351.27436281859076"/>
+        </scene>
+        <!--VC1-->
+        <scene sceneID="Aul-Xj-CoX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tables" referencedIdentifier="VC1" id="fkB-x0-Koj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N6t-5a-nol" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473" y="270"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

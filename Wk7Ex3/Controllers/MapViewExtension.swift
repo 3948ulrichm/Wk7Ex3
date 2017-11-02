@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 extension FirstViewController: MKMapViewDelegate {
     
@@ -15,24 +16,25 @@ extension FirstViewController: MKMapViewDelegate {
         if let annotation = annotation as? Message {
             let identifier = "Pin"
             var view: MKPinAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier:identifier) as? MKPinAnnotationView {
+            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
-            }
-            else {
+            } else {
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
                 view.calloutOffset = CGPoint(x: -8, y: -5)
-                view.pinTintColor = .green
+                view.pinTintColor = .red
                 view.animatesDrop = true
-                //view.image = UIImage(named: "mapButtonOff.png")
+                
+                // view.image = UIImage(named: "mapButtonOff.png")
                 view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIButton
             }
             return view
         }
         return nil
     }
-
+    
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         let message = view.annotation as! Message
@@ -41,7 +43,7 @@ extension FirstViewController: MKMapViewDelegate {
         
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
-        // add a button to remove the annotation
+        // add a button to remove annotation
         ac.addAction(UIAlertAction(title: "Remove", style: .default) {
             (result : UIAlertAction) -> Void in
             mapView.removeAnnotation(message)
@@ -49,4 +51,5 @@ extension FirstViewController: MKMapViewDelegate {
         
         present(ac, animated: true)
     }
+    
 }

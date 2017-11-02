@@ -28,12 +28,12 @@ class FirstViewController: UIViewController {
         self.mapView.delegate = self
         
         // set initial location to Marquette University
-        let initialLocation = CLLocation(latitude: 43.03611, longitude: -87.928759)
+        let initialLocation = CLLocation(latitude: 43.0382216, longitude: -87.9297546)
         centerMapOnLocation(location: initialLocation)
         
         //create Firebase DB reference
         messageNodeRef = Database.database().reference().child("messages")
-        
+
         // use the observe handler to poll for realtime updates
         let pinMessageId = "msg-1"
         var pinMessage: Message?
@@ -53,11 +53,11 @@ class FirstViewController: UIViewController {
                 let messageDisabled = dictionary["isDisabled"] as! Bool
                 
                 // show messages on the map
-                let message = Message(title: "The Bucks are legit!",
-                                      locationName: "Bradley Center",
-                                      username: "John Smith",
+                let message = Message(title: (dictionary["title"] as? String)!,
+                                      locationName: (dictionary["locationName"] as? String)!,
+                                      username: (dictionary["username"] as? String)!,
                                       coordinate: CLLocationCoordinate2D(latitude: pinLat, longitude: pinLong),
-                                     isDisabled: messageDisabled)
+                                      isDisabled: messageDisabled)
                 
                 pinMessage = message
                 
